@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 import "os"
+import "github.com/desagar/stringutil"
 
 //comment
 func main() {
@@ -15,5 +16,6 @@ func main() {
     x += "\n" + y
     fmt.Println(x)
     fmt.Println(l)
+    fmt.Println("Or am I " + stringutil.Reverse("Shadow") + "?")
     os.Exit(0)
 }
