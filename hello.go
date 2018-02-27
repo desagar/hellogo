@@ -6,7 +6,7 @@ import "github.com/desagar/stringutil"
 
 //comment
 func main() {
-    var x string = "Hello, I am Shadow"
+    var x string = "Hello, I am Shadow2"
     
     //declare constant and infer type from RHS without type specified
     const y = "Bringer of darkness"
