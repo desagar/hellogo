@@ -31,4 +31,11 @@ build:
         name: go build
         code: |
           go build ./...
+deploy:
+  steps:
+    - script:
+        name: dummy deploy
+        code: |
+          echo "this is dummy deploy"
+
 
