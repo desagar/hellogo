@@ -36,6 +36,6 @@ deploy:
     - script:
         name: dummy deploy
         code: |
-          echo "this is dummy deploy"
+          echo "this is dummy deploy hello"
 
 
