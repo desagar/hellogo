@@ -31,6 +31,7 @@ build:
         name: go build
         code: |
           go build ./...
+          pwd
           ls -l
 deploy:
   steps:
