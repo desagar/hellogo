@@ -1,2 +1,2 @@
 # hellogo
-Go Hello World App
+Go Hello World Application
