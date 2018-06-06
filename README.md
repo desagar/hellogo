@@ -1,2 +1,2 @@
 # hellogo
-Go Hello World Application
+Go Hello World Application Demo
