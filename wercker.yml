@@ -33,6 +33,7 @@ build:
           go build ./...
           pwd
           ls -l
+          echo "in build pipeline" > $WERCKER_CACHE_DIR/pipelines.txt
           
 verification:
   # The steps that will be executed on build
@@ -51,6 +52,12 @@ verification:
           go build ./...
           pwd
           ls -l
+    - script:
+        name: print pipelines.txt
+        code: |
+          ls $WERCKER_CACHE_DIR
+          cat $WERCKER_CACHE_DIR/pipelines.txt
+          echo "in verification pipeline" >> $WERCKER_CACHE_DIR/pipelines.txt
           
 deploy:
   steps:
@@ -59,5 +66,10 @@ deploy:
         code: |
           echo "this is dummy deploy hello"
           ls -l
+    - script:
+        name: print pipelines.txt
+        code: |
+          ls $WERCKER_CACHE_DIR
+          cat $WERCKER_CACHE_DIR/pipelines.txt
 
 
