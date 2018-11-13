@@ -34,6 +34,7 @@ build:
           pwd
           ls -l
           echo "in build pipeline" > $WERCKER_CACHE_DIR/pipelines.txt
+          echo "cache dir is ${WERCKER_CACHE_DIR}"
           
 verification:
   # The steps that will be executed on build
@@ -58,6 +59,7 @@ verification:
           ls $WERCKER_CACHE_DIR
           cat $WERCKER_CACHE_DIR/pipelines.txt
           echo "in verification pipeline" >> $WERCKER_CACHE_DIR/pipelines.txt
+          echo "cache dir is ${WERCKER_CACHE_DIR}"
           
 deploy:
   steps:
@@ -71,5 +73,6 @@ deploy:
         code: |
           ls $WERCKER_CACHE_DIR
           cat $WERCKER_CACHE_DIR/pipelines.txt
+          echo "cache dir is ${WERCKER_CACHE_DIR}"
 
 
