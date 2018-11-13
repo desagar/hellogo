@@ -59,7 +59,9 @@ verification:
         name: print pipelines.txt
         code: |
           ls $WERCKER_CACHE_DIR
+          echo "------------------------------"
           cat $WERCKER_CACHE_DIR/pipelines.txt
+          echo "------------------------------"
           echo "in verification pipeline" >> $WERCKER_CACHE_DIR/pipelines.txt
           echo "cache dir is ${WERCKER_CACHE_DIR}"
           
@@ -74,7 +76,9 @@ deploy:
         name: print pipelines.txt
         code: |
           ls $WERCKER_CACHE_DIR
+          echo "------------------------------"
           cat $WERCKER_CACHE_DIR/pipelines.txt
+          echo "------------------------------"
           echo "cache dir is ${WERCKER_CACHE_DIR}"
 
 
