@@ -48,5 +48,3 @@ deploy:
         tag: latest,$WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
         repository: iad.ocir.io/odx-pipelines/spinnaker/demo_hellogo
         registry: https://iad.ocir.io/v2
-
-
