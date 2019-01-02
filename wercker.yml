@@ -35,6 +35,7 @@ build:
           ls -l
           echo "in build pipeline" > $WERCKER_CACHE_DIR/pipelines.txt
           echo "cache dir is ${WERCKER_CACHE_DIR}"
+          cp ./hello /pipeline/source
           
 deploy:
     box: golang:1.8
