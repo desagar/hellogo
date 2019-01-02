@@ -66,19 +66,16 @@ verification:
           echo "cache dir is ${WERCKER_CACHE_DIR}"
           
 deploy:
-  steps:
-    - script:
-        name: dummy deploy
-        code: |
-          echo "this is dummy deploy hello"
-          ls -l
-    - script:
-        name: print pipelines.txt
-        code: |
-          ls $WERCKER_CACHE_DIR
-          echo "------------------------------"
-          cat $WERCKER_CACHE_DIR/pipelines.txt
-          echo "------------------------------"
-          echo "cache dir is ${WERCKER_CACHE_DIR}"
+    box: golang:1.8
+
+    steps:
+    - internal/docker-push:
+        username: $DOCKER_USERNAME
+        password: $DOCKER_PASSWORD
+        working-dir: /pipeline/source
+        cmd: ./hello
+        tag: latest,$WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
+        repository: iad.ocir.io/odx-pipelines/spinnaker/demo_hellogo
+        registry: https://iad.ocir.io/v2
 
 
