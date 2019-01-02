@@ -52,7 +52,7 @@ verification:
     - script:
         name: go build
         code: |
-          go build ./...
+          go build -o hello ./...
           pwd
           ls -l
     - script:
