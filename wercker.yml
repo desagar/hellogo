@@ -54,6 +54,7 @@ build:
         code: |
           go build -o hello ./...
           echo "Build plain!"
+          echo "Env var DOLLARTEST is $DOLLARTEST"
           pwd
           ls -l
           echo "in build pipeline" > $WERCKER_CACHE_DIR/pipelines.txt
