@@ -60,6 +60,14 @@ build:
           echo "in build pipeline" > $WERCKER_CACHE_DIR/pipelines.txt
           echo "cache dir is ${WERCKER_CACHE_DIR}"
           cp ./hello /pipeline/source
+    - internal/docker-push:
+        username: $DOCKER_USERNAME
+        password: $DOCKER_PASSWORD
+        working-dir: /pipeline/source
+        cmd: ./hello
+        tag: latest,$WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
+        repository: iad.ocir.io/odx-pipelines/spinnaker/demo_hellogo
+        registry: https://iad.ocir.io/v2
 
           
 deploy:
